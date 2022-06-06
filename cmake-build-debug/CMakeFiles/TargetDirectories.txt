@@ -1,0 +1,3 @@
+C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO-2/cmake-build-debug/CMakeFiles/SDIZO2.dir
+C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO-2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO-2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
