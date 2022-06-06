@@ -20,7 +20,7 @@ void Tests::saveResults(std::string filename, int index)
     }
     else
     {
-        std::cout << "B³¹d zapisu!" << std::endl;
+        std::cout << "ERROR" << std::endl;
         getchar();
     }
 }

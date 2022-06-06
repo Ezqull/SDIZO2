@@ -1,8 +1,7 @@
 #include "Testing.h"
 
 
-void Testing::loopTests(Matrix mat, List list, int size)
-{
+void Testing::loopTests(Matrix mat, List list, int size){
     Tests testing;
     int *sizes = new int[32];
 
@@ -33,8 +32,7 @@ void Testing::loopTests(Matrix mat, List list, int size)
     int directed = size * (size - 1);
     int undirected = (size * (size - 1)) / 2;
 
-    for (int j = 0; j < 100; j++)
-    {
+    for (int j = 0; j < 100; j++){
         std::cout << (j + 1) << std::endl;
 
         // 25% skierowany
@@ -43,28 +41,28 @@ void Testing::loopTests(Matrix mat, List list, int size)
 
         // Testy macierzy Dijkstra
         testing.startTimer();
-        mat.dijkstra(0, rand()%mat.edges);
+        mat.dijkstra(0, rand()%size);
         testing.stopTimer();
 
         testing.addDijkstra(testing.measuredTime(), sizes, 0);
 
         // Testy macierzy Bellman-Ford
         testing.startTimer();
-        mat.bellmanFord(0, rand()%mat.edges);
+        mat.bellmanFord(0, rand()%size);
         testing.stopTimer();
 
         testing.addBellmanFord(testing.measuredTime(), sizes, 1);
 
         // Testy listy Dijkstra
         testing.startTimer();
-        list.dijkstra(0, rand()%mat.edges);
+        list.dijkstra(0, rand()%size);
         testing.stopTimer();
 
         testing.addDijkstra(testing.measuredTime(), sizes, 16);
 
         // Testy lsity Bellman-Ford
         testing.startTimer();
-        list.bellmanFord(0, rand()%mat.edges);
+        list.bellmanFord(0, rand()%size);
         testing.stopTimer();
 
         testing.addBellmanFord(testing.measuredTime(), sizes, 17);
@@ -111,28 +109,28 @@ void Testing::loopTests(Matrix mat, List list, int size)
 
         // Testy macierzy Dijkstra
         testing.startTimer();
-        mat.dijkstra(0, rand()%mat.edges);
+        mat.dijkstra(0, rand()%size);
         testing.stopTimer();
 
         testing.addDijkstra(testing.measuredTime(), sizes, 4);
 
         // Testy macierzy Bellman-Ford
         testing.startTimer();
-        mat.bellmanFord(0, rand()%mat.edges);
+        mat.bellmanFord(0, rand()%size);
         testing.stopTimer();
 
         testing.addBellmanFord(testing.measuredTime(), sizes, 5);
 
         // Testy listy Dijkstra
         testing.startTimer();
-        list.dijkstra(0, rand()%mat.edges);
+        list.dijkstra(0, rand()%size);
         testing.stopTimer();
 
         testing.addDijkstra(testing.measuredTime(), sizes, 20);
 
         // Testy lsity Bellman-Ford
         testing.startTimer();
-        list.bellmanFord(0, rand()%mat.edges);
+        list.bellmanFord(0, rand()%size);
         testing.stopTimer();
 
         testing.addBellmanFord(testing.measuredTime(), sizes, 21);
@@ -179,28 +177,28 @@ void Testing::loopTests(Matrix mat, List list, int size)
 
         // Testy macierzy Dijkstra
         testing.startTimer();
-        mat.dijkstra(0, rand()%mat.edges);
+        mat.dijkstra(0, rand()%size);
         testing.stopTimer();
 
         testing.addDijkstra(testing.measuredTime(), sizes, 8);
 
         // Testy macierzy Bellman-Ford
         testing.startTimer();
-        mat.bellmanFord(0, rand()%mat.edges);
+        mat.bellmanFord(0, rand()%size);
         testing.stopTimer();
 
         testing.addBellmanFord(testing.measuredTime(), sizes, 9);
 
         // Testy listy Dijkstra
         testing.startTimer();
-        list.dijkstra(0, rand()%mat.edges);
+        list.dijkstra(0, rand()%size);
         testing.stopTimer();
 
         testing.addDijkstra(testing.measuredTime(), sizes, 24);
 
         // Testy lsity Bellman-Ford
         testing.startTimer();
-        list.bellmanFord(0, rand()%mat.edges);
+        list.bellmanFord(0, rand()%size);
         testing.stopTimer();
 
         testing.addBellmanFord(testing.measuredTime(), sizes, 25);
@@ -247,28 +245,28 @@ void Testing::loopTests(Matrix mat, List list, int size)
 
         // Testy macierzy Dijkstra
         testing.startTimer();
-        mat.dijkstra(0, rand()%mat.edges);
+        mat.dijkstra(0, rand()%size);
         testing.stopTimer();
 
         testing.addDijkstra(testing.measuredTime(), sizes, 12);
 
         // Testy macierzy Bellman-Ford
         testing.startTimer();
-        mat.bellmanFord(0, rand()%mat.edges);
+        mat.bellmanFord(0, rand()%size);
         testing.stopTimer();
 
         testing.addBellmanFord(testing.measuredTime(), sizes, 13);
 
         // Testy listy Dijkstra
         testing.startTimer();
-        list.dijkstra(0, rand()%mat.edges);
+        list.dijkstra(0, rand()%size);
         testing.stopTimer();
 
         testing.addDijkstra(testing.measuredTime(), sizes, 28);
 
         // Testy lsity Bellman-Ford
         testing.startTimer();
-        list.bellmanFord(0, rand()%mat.edges);
+        list.bellmanFord(0, rand()%size);
         testing.stopTimer();
 
         testing.addBellmanFord(testing.measuredTime(), sizes, 29);
@@ -307,7 +305,7 @@ void Testing::loopTests(Matrix mat, List list, int size)
 
         testing.addKruskal(testing.measuredTime(), sizes, 31);
     }
-    std::cout << "\nTesty zakończone!" << std::endl;
+    std::cout << "\nTests finished" << std::endl;
     getchar();
 
     testing.saveResults("mat25", 0);

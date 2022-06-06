@@ -358,9 +358,8 @@ void Matrix::mstPrim(int start){
 //Funkcja obslugujaca algorytm Kruskala
 void Matrix::mstKruskal(){
 
-    bool found;
     int *temp;
-    int index2, ind, tab, tab2;
+    int ind, tab, tab2;
     mst_size = 0;
     cnt = 0;
     t_size = nodes;
@@ -402,9 +401,6 @@ void Matrix::mstKruskal(){
     while (cnt != (nodes - 1)){
 
         ind++;
-        index = line[ind].source;
-        index2 = line[ind].target;
-        found = false;
 
         for (int i = 0; i < t_size; i++){
             for (int j = 0; j < sizes[i]; j++){
@@ -457,6 +453,7 @@ void Matrix::bellmanFord(int start, int end) {
         for (int i = 0; i < dnch; i++) {
             notchecked[i].index = i;
             notchecked[i].distance = MAX_INT;
+            notchecked[i].prev = -1;
         }
         notchecked[start].distance = 0;
         for (int i = 1; i < (nodes - 1); i++) {

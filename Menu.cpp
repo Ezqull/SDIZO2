@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include "Matrix.h"
 #include "List.h"
 #include "Menu.h"
 #include "Testing.h"
@@ -15,6 +14,7 @@ void Menu::create_ui(Graphs *gg){
 
     cout << "Enter number of vertices: ";
     cin >> nodes;
+
     if (nodes <= 1) {
         cout << "\nNumber of vertices must be higher than 1" << endl;
         return;
@@ -41,6 +41,7 @@ void Menu::create_ui(Graphs *gg){
 
     cout << "Enter desired density, > " << mindensity << "%" << endl;
     cin >> edge;
+
     if(edge < mindensity || edge > 100) {
         return;
     }
@@ -74,8 +75,7 @@ void Menu::prim(Graphs *gg){
     }
 }
 
-void Menu::kruskal(Graphs *gg)
-{
+void Menu::kruskal(Graphs *gg){
     if (directed) {
         cout << "\nGraph can't be directed" << endl;
     }else {
@@ -87,8 +87,7 @@ void Menu::kruskal(Graphs *gg)
     }
 }
 
-void Menu::dijkstra(Graphs *gg)
-{
+void Menu::dijkstra(Graphs *gg){
     int start;
     int end;
     if (!directed) {

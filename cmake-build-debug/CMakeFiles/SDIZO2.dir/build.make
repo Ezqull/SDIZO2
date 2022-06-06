@@ -52,10 +52,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2"
+CMAKE_SOURCE_DIR = "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SDIZO2.dir/depend.make
@@ -72,106 +72,106 @@ CMakeFiles/SDIZO2.dir/Graphs.cpp.obj: CMakeFiles/SDIZO2.dir/flags.make
 CMakeFiles/SDIZO2.dir/Graphs.cpp.obj: CMakeFiles/SDIZO2.dir/includes_CXX.rsp
 CMakeFiles/SDIZO2.dir/Graphs.cpp.obj: ../Graphs.cpp
 CMakeFiles/SDIZO2.dir/Graphs.cpp.obj: CMakeFiles/SDIZO2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SDIZO2.dir/Graphs.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Graphs.cpp.obj -MF CMakeFiles\SDIZO2.dir\Graphs.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Graphs.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Graphs.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SDIZO2.dir/Graphs.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Graphs.cpp.obj -MF CMakeFiles\SDIZO2.dir\Graphs.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Graphs.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Graphs.cpp"
 
 CMakeFiles/SDIZO2.dir/Graphs.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDIZO2.dir/Graphs.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Graphs.cpp" > CMakeFiles\SDIZO2.dir\Graphs.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Graphs.cpp" > CMakeFiles\SDIZO2.dir\Graphs.cpp.i
 
 CMakeFiles/SDIZO2.dir/Graphs.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDIZO2.dir/Graphs.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Graphs.cpp" -o CMakeFiles\SDIZO2.dir\Graphs.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Graphs.cpp" -o CMakeFiles\SDIZO2.dir\Graphs.cpp.s
 
 CMakeFiles/SDIZO2.dir/List.cpp.obj: CMakeFiles/SDIZO2.dir/flags.make
 CMakeFiles/SDIZO2.dir/List.cpp.obj: CMakeFiles/SDIZO2.dir/includes_CXX.rsp
 CMakeFiles/SDIZO2.dir/List.cpp.obj: ../List.cpp
 CMakeFiles/SDIZO2.dir/List.cpp.obj: CMakeFiles/SDIZO2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SDIZO2.dir/List.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/List.cpp.obj -MF CMakeFiles\SDIZO2.dir\List.cpp.obj.d -o CMakeFiles\SDIZO2.dir\List.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\List.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SDIZO2.dir/List.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/List.cpp.obj -MF CMakeFiles\SDIZO2.dir\List.cpp.obj.d -o CMakeFiles\SDIZO2.dir\List.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\List.cpp"
 
 CMakeFiles/SDIZO2.dir/List.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDIZO2.dir/List.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\List.cpp" > CMakeFiles\SDIZO2.dir\List.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\List.cpp" > CMakeFiles\SDIZO2.dir\List.cpp.i
 
 CMakeFiles/SDIZO2.dir/List.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDIZO2.dir/List.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\List.cpp" -o CMakeFiles\SDIZO2.dir\List.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\List.cpp" -o CMakeFiles\SDIZO2.dir\List.cpp.s
 
 CMakeFiles/SDIZO2.dir/Matrix.cpp.obj: CMakeFiles/SDIZO2.dir/flags.make
 CMakeFiles/SDIZO2.dir/Matrix.cpp.obj: CMakeFiles/SDIZO2.dir/includes_CXX.rsp
 CMakeFiles/SDIZO2.dir/Matrix.cpp.obj: ../Matrix.cpp
 CMakeFiles/SDIZO2.dir/Matrix.cpp.obj: CMakeFiles/SDIZO2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SDIZO2.dir/Matrix.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Matrix.cpp.obj -MF CMakeFiles\SDIZO2.dir\Matrix.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Matrix.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Matrix.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SDIZO2.dir/Matrix.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Matrix.cpp.obj -MF CMakeFiles\SDIZO2.dir\Matrix.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Matrix.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Matrix.cpp"
 
 CMakeFiles/SDIZO2.dir/Matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDIZO2.dir/Matrix.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Matrix.cpp" > CMakeFiles\SDIZO2.dir\Matrix.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Matrix.cpp" > CMakeFiles\SDIZO2.dir\Matrix.cpp.i
 
 CMakeFiles/SDIZO2.dir/Matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDIZO2.dir/Matrix.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Matrix.cpp" -o CMakeFiles\SDIZO2.dir\Matrix.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Matrix.cpp" -o CMakeFiles\SDIZO2.dir\Matrix.cpp.s
 
 CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj: CMakeFiles/SDIZO2.dir/flags.make
 CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj: CMakeFiles/SDIZO2.dir/includes_CXX.rsp
 CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj: ../SDIZO2.cpp
 CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj: CMakeFiles/SDIZO2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj -MF CMakeFiles\SDIZO2.dir\SDIZO2.cpp.obj.d -o CMakeFiles\SDIZO2.dir\SDIZO2.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\SDIZO2.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj -MF CMakeFiles\SDIZO2.dir\SDIZO2.cpp.obj.d -o CMakeFiles\SDIZO2.dir\SDIZO2.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\SDIZO2.cpp"
 
 CMakeFiles/SDIZO2.dir/SDIZO2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDIZO2.dir/SDIZO2.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\SDIZO2.cpp" > CMakeFiles\SDIZO2.dir\SDIZO2.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\SDIZO2.cpp" > CMakeFiles\SDIZO2.dir\SDIZO2.cpp.i
 
 CMakeFiles/SDIZO2.dir/SDIZO2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDIZO2.dir/SDIZO2.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\SDIZO2.cpp" -o CMakeFiles\SDIZO2.dir\SDIZO2.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\SDIZO2.cpp" -o CMakeFiles\SDIZO2.dir\SDIZO2.cpp.s
 
 CMakeFiles/SDIZO2.dir/Tests.cpp.obj: CMakeFiles/SDIZO2.dir/flags.make
 CMakeFiles/SDIZO2.dir/Tests.cpp.obj: CMakeFiles/SDIZO2.dir/includes_CXX.rsp
 CMakeFiles/SDIZO2.dir/Tests.cpp.obj: ../Tests.cpp
 CMakeFiles/SDIZO2.dir/Tests.cpp.obj: CMakeFiles/SDIZO2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SDIZO2.dir/Tests.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Tests.cpp.obj -MF CMakeFiles\SDIZO2.dir\Tests.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Tests.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Tests.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SDIZO2.dir/Tests.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Tests.cpp.obj -MF CMakeFiles\SDIZO2.dir\Tests.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Tests.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Tests.cpp"
 
 CMakeFiles/SDIZO2.dir/Tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDIZO2.dir/Tests.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Tests.cpp" > CMakeFiles\SDIZO2.dir\Tests.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Tests.cpp" > CMakeFiles\SDIZO2.dir\Tests.cpp.i
 
 CMakeFiles/SDIZO2.dir/Tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDIZO2.dir/Tests.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Tests.cpp" -o CMakeFiles\SDIZO2.dir\Tests.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Tests.cpp" -o CMakeFiles\SDIZO2.dir\Tests.cpp.s
 
 CMakeFiles/SDIZO2.dir/Menu.cpp.obj: CMakeFiles/SDIZO2.dir/flags.make
 CMakeFiles/SDIZO2.dir/Menu.cpp.obj: CMakeFiles/SDIZO2.dir/includes_CXX.rsp
 CMakeFiles/SDIZO2.dir/Menu.cpp.obj: ../Menu.cpp
 CMakeFiles/SDIZO2.dir/Menu.cpp.obj: CMakeFiles/SDIZO2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SDIZO2.dir/Menu.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Menu.cpp.obj -MF CMakeFiles\SDIZO2.dir\Menu.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Menu.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Menu.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SDIZO2.dir/Menu.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Menu.cpp.obj -MF CMakeFiles\SDIZO2.dir\Menu.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Menu.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Menu.cpp"
 
 CMakeFiles/SDIZO2.dir/Menu.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDIZO2.dir/Menu.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Menu.cpp" > CMakeFiles\SDIZO2.dir\Menu.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Menu.cpp" > CMakeFiles\SDIZO2.dir\Menu.cpp.i
 
 CMakeFiles/SDIZO2.dir/Menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDIZO2.dir/Menu.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Menu.cpp" -o CMakeFiles\SDIZO2.dir\Menu.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Menu.cpp" -o CMakeFiles\SDIZO2.dir\Menu.cpp.s
 
 CMakeFiles/SDIZO2.dir/Testing.cpp.obj: CMakeFiles/SDIZO2.dir/flags.make
 CMakeFiles/SDIZO2.dir/Testing.cpp.obj: CMakeFiles/SDIZO2.dir/includes_CXX.rsp
 CMakeFiles/SDIZO2.dir/Testing.cpp.obj: ../Testing.cpp
 CMakeFiles/SDIZO2.dir/Testing.cpp.obj: CMakeFiles/SDIZO2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SDIZO2.dir/Testing.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Testing.cpp.obj -MF CMakeFiles\SDIZO2.dir\Testing.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Testing.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Testing.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SDIZO2.dir/Testing.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SDIZO2.dir/Testing.cpp.obj -MF CMakeFiles\SDIZO2.dir\Testing.cpp.obj.d -o CMakeFiles\SDIZO2.dir\Testing.cpp.obj -c "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Testing.cpp"
 
 CMakeFiles/SDIZO2.dir/Testing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SDIZO2.dir/Testing.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Testing.cpp" > CMakeFiles\SDIZO2.dir\Testing.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Testing.cpp" > CMakeFiles\SDIZO2.dir\Testing.cpp.i
 
 CMakeFiles/SDIZO2.dir/Testing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SDIZO2.dir/Testing.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\Testing.cpp" -o CMakeFiles\SDIZO2.dir\Testing.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\Testing.cpp" -o CMakeFiles\SDIZO2.dir\Testing.cpp.s
 
 # Object files for target SDIZO2
 SDIZO2_OBJECTS = \
@@ -197,7 +197,7 @@ SDIZO2.exe: CMakeFiles/SDIZO2.dir/build.make
 SDIZO2.exe: CMakeFiles/SDIZO2.dir/linklibs.rsp
 SDIZO2.exe: CMakeFiles/SDIZO2.dir/objects1.rsp
 SDIZO2.exe: CMakeFiles/SDIZO2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable SDIZO2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable SDIZO2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SDIZO2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -209,6 +209,6 @@ CMakeFiles/SDIZO2.dir/clean:
 .PHONY : CMakeFiles/SDIZO2.dir/clean
 
 CMakeFiles/SDIZO2.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO-2\cmake-build-debug\CMakeFiles\SDIZO2.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug" "C:\Users\ezzqu\OneDrive\Pulpit\SDiZO - P\SDIZO2\cmake-build-debug\CMakeFiles\SDIZO2.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/SDIZO2.dir/depend
 
