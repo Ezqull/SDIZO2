@@ -187,7 +187,7 @@ void List::spanningtree(){
 			tail->next = newNode;
 			newNode->prev = tail;
 			tail = newNode;
-			child->weight = (rand() % 99) + 1;
+			child->weight = (rand() % 15) + 1;
 
 			if (create->head == nullptr){
 				create->head = child;
@@ -236,10 +236,10 @@ void List::dijkstra(int start, int end) {
         } while (dnch != 0);
 
         if (!testing) {
-            displayDijkstra(checked, dch, start, end);
+            displayShortestPath(checked, dch, start, end);
         }
     } else {
-        cout << "Podany wierzcholaek jest bledny!";
+        cout << "Wrong value of vertex";
     }
 }
 
@@ -547,7 +547,7 @@ void List::bellmanFord(int start, int end) {
         }
 
         if (!testing) {
-            displayDijkstra(notchecked, dnch, start, end);
+            displayShortestPath(notchecked, dnch, start, end);
         }
 
         delete[] notchecked;

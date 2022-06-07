@@ -1,7 +1,6 @@
 #include "Tests.h"
 #include <iostream>
 #include <fstream>
-#include <cstdlib>
 #include <chrono>
 
 void Tests::saveResults(std::string filename, int index)

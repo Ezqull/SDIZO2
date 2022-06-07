@@ -53,7 +53,7 @@ public:
 protected:
 	void sort(Kruskal *target);
 	void connect(int tab, int tab2);
-	void displayDijkstra(Dijkstra *list, int size, int start, int end);
+	void displayShortestPath(Dijkstra *list, int size, int start, int end);
 	void displayPrim(Prim *list, int size);
 	void displayKruskal(Kruskal *list, int size);
 };

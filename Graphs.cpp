@@ -9,9 +9,11 @@ void Graphs::switch_test(){
 	testing = !testing;
 }
 
-//Funckja drukujaca wynik dzialania algorytmu Disjkstry
-void Graphs::displayDijkstra(Dijkstra *list, int size, int start, int end){
+//Funckja drukujaca wynik dzialania algorytmu Disjkstry i Bellmana-Forda
+void Graphs::displayShortestPath(Dijkstra *list, int size, int start, int end){
+
     Dijkstra *path = new Dijkstra[size];
+
     for (int i = 0; i < size; i++) {
         if(list[i].index == end){
             path[0] = list[i];
@@ -19,6 +21,7 @@ void Graphs::displayDijkstra(Dijkstra *list, int size, int start, int end){
     }
 
     int k = 0;
+    int fail = 0;
 
     do{
         for (int i = 0; i < size; i++) {
@@ -26,8 +29,16 @@ void Graphs::displayDijkstra(Dijkstra *list, int size, int start, int end){
                 k++;
                 path[k] = list[i];
                 break;
+            }else {
+                fail++;
             }
         }
+
+        if (fail == size){
+            cout << "Path doesn't exist" << endl;
+            return;
+        }
+
     }while (path[k].index != start);
 
 
@@ -150,9 +161,9 @@ void Graphs::displayKruskal(Kruskal *list, int size){
 
 	cout << "Solution:" << endl;
 	cout << "Total mst size: " << mst_size << endl;
-	cout << "\nLista uzytych krawedzi: " << endl;
+	cout << "\nList of used edges: " << endl;
 
 	for (int i = 0; i < size; i++){
-		cout << "\nPolaczenie " << list[i].source << " z " << list[i].target << ", o wadze " << list[i].weight;
+		cout << "\nConnection from" << list[i].source << " to " << list[i].target << ", weight " << list[i].weight;
 	}
 }

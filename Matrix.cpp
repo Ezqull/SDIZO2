@@ -137,7 +137,7 @@ void Matrix::spanningtree(int *visited){
             if (visited[temp] != 0) {
                 continue;
             }else {
-                pointer[node][temp] = (rand() % 99) + 1;
+                pointer[node][temp] = (rand() % 15) + 1;
                 visited[temp] = 1;
             }
 
@@ -186,7 +186,7 @@ void Matrix::dijkstra(int start, int end) {
         } while (dnch != 0);
 
         if (!testing) {
-            displayDijkstra(checked, dch, start, end);
+            displayShortestPath(checked, dch, start, end);
         }
 
         delete[] notchecked;
@@ -469,7 +469,7 @@ void Matrix::bellmanFord(int start, int end) {
             }
         }
         if (!testing) {
-            displayDijkstra(notchecked, dnch, start, end);
+            displayShortestPath(notchecked, dnch, start, end);
         }
         delete[] notchecked;
     } else {
