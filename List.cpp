@@ -1,12 +1,7 @@
 //Implementacja metdo klasy List
-//#include "pch.h"
 #include <iostream>
-#include <conio.h>
 #include <string>
 #include <cstdlib>
-#include <time.h>
-#include <Windows.h>
-#include <fstream>
 #include "List.h"
 
 using namespace std;

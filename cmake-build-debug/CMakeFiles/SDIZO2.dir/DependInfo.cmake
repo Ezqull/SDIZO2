@@ -4,17 +4,27 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/samolot/Desktop/SDIZO2/Graphs.cpp" "/Users/samolot/Desktop/SDIZO2/cmake-build-debug/CMakeFiles/SDIZO2.dir/Graphs.cpp.o"
+  "/Users/samolot/Desktop/SDIZO2/List.cpp" "/Users/samolot/Desktop/SDIZO2/cmake-build-debug/CMakeFiles/SDIZO2.dir/List.cpp.o"
+  "/Users/samolot/Desktop/SDIZO2/Matrix.cpp" "/Users/samolot/Desktop/SDIZO2/cmake-build-debug/CMakeFiles/SDIZO2.dir/Matrix.cpp.o"
+  "/Users/samolot/Desktop/SDIZO2/Menu.cpp" "/Users/samolot/Desktop/SDIZO2/cmake-build-debug/CMakeFiles/SDIZO2.dir/Menu.cpp.o"
+  "/Users/samolot/Desktop/SDIZO2/Testing.cpp" "/Users/samolot/Desktop/SDIZO2/cmake-build-debug/CMakeFiles/SDIZO2.dir/Testing.cpp.o"
+  "/Users/samolot/Desktop/SDIZO2/Tests.cpp" "/Users/samolot/Desktop/SDIZO2/cmake-build-debug/CMakeFiles/SDIZO2.dir/Tests.cpp.o"
+  "/Users/samolot/Desktop/SDIZO2/main.cpp" "/Users/samolot/Desktop/SDIZO2/cmake-build-debug/CMakeFiles/SDIZO2.dir/main.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../."
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO2/Graphs.cpp" "CMakeFiles/SDIZO2.dir/Graphs.cpp.obj" "gcc" "CMakeFiles/SDIZO2.dir/Graphs.cpp.obj.d"
-  "C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO2/List.cpp" "CMakeFiles/SDIZO2.dir/List.cpp.obj" "gcc" "CMakeFiles/SDIZO2.dir/List.cpp.obj.d"
-  "C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO2/Matrix.cpp" "CMakeFiles/SDIZO2.dir/Matrix.cpp.obj" "gcc" "CMakeFiles/SDIZO2.dir/Matrix.cpp.obj.d"
-  "C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO2/Menu.cpp" "CMakeFiles/SDIZO2.dir/Menu.cpp.obj" "gcc" "CMakeFiles/SDIZO2.dir/Menu.cpp.obj.d"
-  "C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO2/SDIZO2.cpp" "CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj" "gcc" "CMakeFiles/SDIZO2.dir/SDIZO2.cpp.obj.d"
-  "C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO2/Testing.cpp" "CMakeFiles/SDIZO2.dir/Testing.cpp.obj" "gcc" "CMakeFiles/SDIZO2.dir/Testing.cpp.obj.d"
-  "C:/Users/ezzqu/OneDrive/Pulpit/SDiZO - P/SDIZO2/Tests.cpp" "CMakeFiles/SDIZO2.dir/Tests.cpp.obj" "gcc" "CMakeFiles/SDIZO2.dir/Tests.cpp.obj.d"
   )
 
 # Targets to which this target links.

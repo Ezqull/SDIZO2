@@ -4,11 +4,9 @@
 #include "Graphs.h"
 #include "Tests.h"
 #include <iostream>
-#include <conio.h>
 #include <string>
 #include <cstdlib>
 #include <ctime>
-#include <Windows.h>
 #include <fstream>
 
 class Matrix: public Graphs, public Tests{

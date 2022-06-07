@@ -13,7 +13,6 @@ add_executable(SDIZO2
         List.h
         Matrix.cpp
         Matrix.h
-        pch.h
-        SDIZO2.cpp
+        main.cpp
         Tests.cpp
         Tests.h Menu.cpp Menu.h Testing.cpp)
