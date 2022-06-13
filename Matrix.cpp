@@ -1,5 +1,4 @@
 //Implementacja metod klasy Matrix
-//#include "pch.h"
 #include "Matrix.h"
 
 using namespace std;
@@ -12,14 +11,16 @@ Matrix::~Matrix() {
 }
 
 //Funkcja losowo tworzaca graf
-void Matrix::create(int NN, double EE, double ME, bool directed){
-	nodes = NN;
-	edges = ME * (EE/100);
+void Matrix::create(int vertices, double density, double maxEdges, bool directed){
+
+	nodes = vertices;
+	edges = int(maxEdges * (density / 100));
 	bool found;
 	int counter = nodes;
 	int begin, end;
 	int *visited = new int [nodes];
 	pointer = new int *[nodes];
+
 	for (int i = 0; i < nodes; i++){
 
 		visited[i] = 0;
@@ -45,7 +46,7 @@ void Matrix::create(int NN, double EE, double ME, bool directed){
 	while (counter <= edges){
 
 		found = false;
-		begin = rand() % nodes;
+		begin = rand () % nodes;
 
 		for (int i = 0; i < nodes; i++){
 			if (i != begin && pointer[begin][i] == 0){
@@ -57,7 +58,7 @@ void Matrix::create(int NN, double EE, double ME, bool directed){
         if (!found) {
             continue;
         }
-		pointer[begin][end] = (rand() % 15) + 1;
+		pointer[begin][end] = (rand () % 50) + 1;
 
         if (!directed) {
             pointer[end][begin] = pointer[begin][end];
@@ -137,7 +138,7 @@ void Matrix::spanningtree(int *visited){
             if (visited[temp] != 0) {
                 continue;
             }else {
-                pointer[node][temp] = (rand() % 15) + 1;
+                pointer[node][temp] = (rand() % 50) + 1;
                 visited[temp] = 1;
             }
 
@@ -167,29 +168,30 @@ void Matrix::spanningtree(int *visited){
 
 //Funkcja obslugujaca algorytm Dijsktry
 void Matrix::dijkstra(int start, int end) {
-    int temp = start;
-    if( start>=0 && start<= nodes-1) {
-        dnch = nodes;
-        dch = 0;
-        notchecked = new Dijkstra[dnch];
-        for (int i = 0; i < dnch; i++) {
-            notchecked[i].index = i;
+
+    if( start>=0 && start<= nodes-1 && (end>=0 && end<=nodes-1)) {
+        int temp = start;
+        shortestPathUnchecked = nodes;
+        shortestPathChecked = 0;
+        notChecked = new shortestPath[shortestPathUnchecked];
+        for (int i = 0; i < shortestPathUnchecked; i++) {
+            notChecked[i].index = i;
         }
 
-        notchecked[temp].distance = 0;
-        notchecked[temp].prev = -1;
+        notChecked[temp].distance = 0;
+        notChecked[temp].prev = -1;
 
         do {
             temp = relax(temp);
-            dnch--;
-            dch++;
-        } while (dnch != 0);
+            shortestPathUnchecked--;
+            shortestPathChecked++;
+        } while (shortestPathUnchecked != 0);
 
         if (!testing) {
-            displayShortestPath(checked, dch, start, end);
+            displayShortestPath(checked, shortestPathChecked, start, end);
         }
 
-        delete[] notchecked;
+        delete[] notChecked;
         delete[] checked;
     } else {
         cout << "Wrong starting vertex";
@@ -198,13 +200,13 @@ void Matrix::dijkstra(int start, int end) {
 
 //Funkcja relaksujaca sasiadow
 int Matrix::relax(int index){
-	Dijkstra *temp;
+	shortestPath *temp;
 	int loop;
 	int fall = 0;
 	int result;
 	int mini;
-	for (int i = 0; i < dnch; i++){
-		if (index == notchecked[i].index){
+	for (int i = 0; i < shortestPathUnchecked; i++){
+		if (index == notChecked[i].index){
 			fall = i;
 			break;
 		}
@@ -212,11 +214,11 @@ int Matrix::relax(int index){
 
 	for (int i = 0; i < nodes; i++){
 		if (pointer[index][i] != 0){
-			for (int j = 0 ; j < dnch; j++){
-				if (notchecked[j].index == i){
-					if ((notchecked[fall].distance + pointer[index][i]) < notchecked[j].distance || notchecked[j].distance == -1){
-						notchecked[j].distance = notchecked[fall].distance + pointer[index][i];
-						notchecked[j].prev = index;
+			for (int j = 0 ; j < shortestPathUnchecked; j++){
+				if (notChecked[j].index == i){
+					if ((notChecked[fall].distance + pointer[index][i]) < notChecked[j].distance || notChecked[j].distance == -1){
+                        notChecked[j].distance = notChecked[fall].distance + pointer[index][i];
+                        notChecked[j].prev = index;
 					}
 					break;
 				}
@@ -224,45 +226,45 @@ int Matrix::relax(int index){
 		}
 	}
 
-	temp = new Dijkstra[dch + 1];
+	temp = new shortestPath[shortestPathChecked + 1];
 
-    if (dch == 0) {
-        temp[0] = notchecked[fall];
+    if (shortestPathChecked == 0) {
+        temp[0] = notChecked[fall];
     }else {
         loop = 0;
-        for (int i = 0; i < dch; i++) {
+        for (int i = 0; i < shortestPathChecked; i++) {
             temp[i] = checked[i];
             loop++;
         }
-        temp[loop] = notchecked[fall];
+        temp[loop] = notChecked[fall];
         delete[] checked;
     }
 
 	loop = 0;
 	checked = temp;
-	temp = new Dijkstra[dnch - 1];
+	temp = new shortestPath[shortestPathUnchecked - 1];
 
-	for (int i = 0; i < (dnch - 1); i++){
+	for (int i = 0; i < (shortestPathUnchecked - 1); i++){
 
 		if (i == fall){
 			loop++;
-			temp[i] = notchecked[loop];
+			temp[i] = notChecked[loop];
         }else{
-			temp[i] = notchecked[loop];
+			temp[i] = notChecked[loop];
 		}
 		loop++;
 	}
 
-	delete[] notchecked;
-	notchecked = temp;
-	result = notchecked[0].index;
+	delete[] notChecked;
+    notChecked = temp;
+	result = notChecked[0].index;
 	mini = 10000000;
 
-	for (int i = 0; i < (dnch - 1); i++){
-		if (notchecked[i].distance != -1){
-			if (notchecked[i].distance < mini){
-				result = notchecked[i].index;
-				mini = notchecked[i].distance;
+	for (int i = 0; i < (shortestPathUnchecked - 1); i++){
+		if (notChecked[i].distance != -1){
+			if (notChecked[i].distance < mini){
+				result = notChecked[i].index;
+				mini = notChecked[i].distance;
 			}
 		}
 	}
@@ -273,20 +275,20 @@ int Matrix::relax(int index){
 void Matrix::mstPrim(int start){
 	Prim *temp;
 	int min, loop, fall;
-	mst_size = 0;
+    mstSize = 0;
 	fall = start;
-	sol = 0;
-	nsol = nodes;
-	notSolved = new Prim[nsol];
+    mstSolved = 0;
+    mstUnsolved = nodes;
+	notSolved = new Prim[mstUnsolved];
 
-    for (int i = 0; i < nsol; i++) {
+    for (int i = 0; i < mstUnsolved; i++) {
         notSolved[i].index = i;
     }
 
-	while (sol != nodes){
+	while (mstSolved != nodes){
 		for (int i = 0; i < nodes; i++){
 			if (pointer[fall][i] != 0){
-				for (int j = 0; j < nsol; j++){
+				for (int j = 0; j < mstUnsolved; j++){
 					if (notSolved[j].index == i){
 						if (notSolved[j].distance > pointer[fall][i] || notSolved[j].distance == 0){
 							notSolved[j].distance = pointer[fall][i];
@@ -298,19 +300,19 @@ void Matrix::mstPrim(int start){
 			}
 		}
 
-		mst_size = mst_size + notSolved[start].distance;
-		sol++;
-		nsol--;
+        mstSize = mstSize + notSolved[start].distance;
+		mstSolved++;
+		mstUnsolved--;
 
 		//Zwiekszanie listy rozwiazanych
 
-		temp = new Prim[sol];
+		temp = new Prim[mstSolved];
 		loop = 0;
 
-        if (sol == 1) {
+        if (mstSolved == 1) {
             temp[0] = notSolved[start];
         }else {
-            for (int i = 0; i < (sol - 1); i++) {
+            for (int i = 0; i < (mstSolved - 1); i++) {
                 temp[i] = solved[i];
                 loop++;
             }
@@ -323,9 +325,9 @@ void Matrix::mstPrim(int start){
 		//Zmiejszanie listy nie rozwiazanych
 
 		loop = 0;
-		temp = new Prim[nsol];
+		temp = new Prim[mstUnsolved];
 
-		for (int i = 0; i < nsol; i++){
+		for (int i = 0; i < mstUnsolved; i++){
 			if (i == start){
 				loop++;
 				temp[i] = notSolved[loop];
@@ -339,7 +341,7 @@ void Matrix::mstPrim(int start){
 		notSolved = temp;
 		min = 100;
 
-		for (int i = 0; i < nsol; i++){
+		for (int i = 0; i < mstUnsolved; i++){
 			if (notSolved[i].distance < min && notSolved[i].distance != 0){
 				start = i;
 				fall = notSolved[i].index;
@@ -349,7 +351,7 @@ void Matrix::mstPrim(int start){
 	}
 
     if (!testing) {
-        displayPrim(solved, sol);
+        displayPrim(solved, mstSolved);
     }
 
 	delete[] solved;
@@ -360,7 +362,7 @@ void Matrix::mstKruskal(){
 
     int *temp;
     int ind, tab, tab2;
-    mst_size = 0;
+    mstSize = 0;
     cnt = 0;
     t_size = nodes;
     sizes = new int[t_size];
@@ -429,7 +431,7 @@ void Matrix::mstKruskal(){
     }
 
     for (int i = 0; i < (nodes - 1); i++) {
-        mst_size = mst_size + result[i].weight;
+        mstSize = mstSize + result[i].weight;
     }
 
     if (!testing) {
@@ -448,30 +450,30 @@ void Matrix::mstKruskal(){
 void Matrix::bellmanFord(int start, int end) {
     if(start >= 0 && start <=nodes-1) {
         int MAX_INT = 64000;
-        dnch = nodes;
-        notchecked = new Dijkstra[dnch];
-        for (int i = 0; i < dnch; i++) {
-            notchecked[i].index = i;
-            notchecked[i].distance = MAX_INT;
-            notchecked[i].prev = -1;
+        shortestPathUnchecked = nodes;
+        notChecked = new shortestPath[shortestPathUnchecked];
+        for (int i = 0; i < shortestPathUnchecked; i++) {
+            notChecked[i].index = i;
+            notChecked[i].distance = MAX_INT;
+            notChecked[i].prev = -1;
         }
-        notchecked[start].distance = 0;
+        notChecked[start].distance = 0;
         for (int i = 1; i < (nodes - 1); i++) {
             for (int j = 0; j < nodes; j++) {
                 for (int m = 0; m < nodes; m++) {
                     if (pointer[j][m] != 0 && m != start) {
-                        if ((notchecked[j].distance + pointer[j][m]) < notchecked[m].distance) {
-                            notchecked[m].distance = notchecked[j].distance + pointer[j][m];
-                            notchecked[m].prev = j;
+                        if ((notChecked[j].distance + pointer[j][m]) < notChecked[m].distance) {
+                            notChecked[m].distance = notChecked[j].distance + pointer[j][m];
+                            notChecked[m].prev = j;
                         }
                     }
                 }
             }
         }
         if (!testing) {
-            displayShortestPath(notchecked, dnch, start, end);
+            displayShortestPath(notChecked, shortestPathUnchecked, start, end);
         }
-        delete[] notchecked;
+        delete[] notChecked;
     } else {
         cout << "Wrong starting vertex";
         return;
@@ -519,5 +521,5 @@ int Matrix::loadGraph(string filename, bool directed){
         cout << "ERROR" << endl;
         return -1;
     }
-    return edges;
+    return nodes;
 }

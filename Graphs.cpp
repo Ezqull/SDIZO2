@@ -1,18 +1,16 @@
-//Implementacja metod klasy Graphs
 #include "Graphs.h"
-
 
 using namespace std;
 
 //Wlanczanie/Wylanczanie testowania
-void Graphs::switch_test(){
+void Graphs::switchTests(){
 	testing = !testing;
 }
 
 //Funckja drukujaca wynik dzialania algorytmu Disjkstry i Bellmana-Forda
-void Graphs::displayShortestPath(Dijkstra *list, int size, int start, int end){
+void Graphs::displayShortestPath(shortestPath *list, int size, int start, int end){
 
-    Dijkstra *path = new Dijkstra[size];
+    auto *path = new shortestPath[size];
 
     for (int i = 0; i < size; i++) {
         if(list[i].index == end){
@@ -45,7 +43,7 @@ void Graphs::displayShortestPath(Dijkstra *list, int size, int start, int end){
     cout << "Solution:" << endl;
     for (int i = k; i >= 0; i--)
     {
-        cout << "\nIndex: " << path[i].index << endl;;
+        cout << "\nIndex: " << path[i].index << endl;
         cout << "Dist: " << path[i].distance << endl;
         cout << "Prev: " << path[i].prev << endl;
     }
@@ -54,7 +52,7 @@ void Graphs::displayShortestPath(Dijkstra *list, int size, int start, int end){
 //Funckja drukujaca wynik dzialania algorytmu Primy
 void Graphs::displayPrim(Prim *list, int size){
 	cout << "Solution:" << endl;
-	cout << "Total mst size: " << mst_size << endl;
+	cout << "Total mst size: " << mstSize << endl;
 	cout << "\nInde:  ";
 	for (int i = 0; i < size; i++){
 
@@ -84,10 +82,13 @@ void Graphs::displayPrim(Prim *list, int size){
         if (list[i].prev == -1) {
             cout << " ";
 
-        } else if (list[i].prev < 9) {
+        } else if (list[i].prev >= 0 &&  list[i].prev < 9) {
             cout << "  ";
 
-        } else {
+        } else if(list[i].prev < 0){
+            cout << " ";
+
+        }else {
             cout << " ";
         }
 
@@ -160,10 +161,10 @@ void Graphs::connect(int tab, int tab2){
 void Graphs::displayKruskal(Kruskal *list, int size){
 
 	cout << "Solution:" << endl;
-	cout << "Total mst size: " << mst_size << endl;
+	cout << "Total mst size: " << mstSize << endl;
 	cout << "\nList of used edges: " << endl;
 
 	for (int i = 0; i < size; i++){
-		cout << "\nConnection from" << list[i].source << " to " << list[i].target << ", weight " << list[i].weight;
+		cout << "\nConnection from " << list[i].source << " to " << list[i].target << ", weight " << list[i].weight;
 	}
 }

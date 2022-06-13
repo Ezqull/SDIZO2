@@ -16,7 +16,7 @@ public:
     std::chrono::high_resolution_clock::time_point startTime;
     std::chrono::high_resolution_clock::time_point endTime;
 
-    void saveResults(std::string filename, int index);
+    void saveResults(const std::string& filename, int index);
     void startTimer();
     void stopTimer();
     long measuredTime();

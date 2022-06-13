@@ -9,7 +9,7 @@
 
 class Testing{
 public:
-    void loopTests(Matrix mat, List list, int size);
+    void loopTests(Matrix matrix, List list, int size);
 };
 
 #endif

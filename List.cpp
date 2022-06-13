@@ -12,40 +12,43 @@ List::~List(){
     }
 }
 
-void List::rekdel(Node *nod){
-    if (nod->next != nullptr) {
-        rekdel(nod->next);
+void List::rekdel(Node *node){
+    if (node->next != nullptr) {
+        rekdel(node->next);
     }
 
-    if (nod->head != nullptr) {
-        edgedel(nod->head);
+    if (node->head != nullptr) {
+        edgedel(node->head);
     }
-    delete nod;
+    delete node;
 }
 
-void List::edgedel(Edge *edg){
-    if (edg->next != nullptr) {
-        edgedel(edg->next);
+void List::edgedel(Edge *edge){
+    if (edge->next != nullptr) {
+        edgedel(edge->next);
     }
-    delete edg;
+    delete edge;
 }
 
 //Funkcja losowo tworzaca graf
-void List::create(int NN, double EE, double ME, bool directed){
+void List::create(int vertices, double density, double maxEdges, bool directed){
+
 	Edge *els;
 	Edge *newEdge;
 	Edge *revEdge;
-	nodes = NN;
-	edges = ME * (EE / 100);
-	Node **vnodes = new Node*[nodes];
+	nodes = vertices;
+	edges = int(maxEdges * (density / 100));
+	Node **vNodes = new Node*[nodes];
 	int *visited = new int[nodes];
 	head = new Node();
 	int counter = nodes;
 	int begin, end;
-	spanningtree();
+
+    spanningTree();
+
 	Node *temp = head;
 	for (int i = 0; i < nodes; i++){
-		vnodes[i] = temp;
+        vNodes[i] = temp;
 		temp = temp->next;
 	}
 
@@ -71,10 +74,8 @@ void List::create(int NN, double EE, double ME, bool directed){
 						els->target->tail = newEdge;
 					}
 
-					if (!directed){
-						revEdge = new Edge();
-						revEdge->target = newEdge->source;
-					}
+                    revEdge = new Edge();
+                    revEdge->target = newEdge->source;
 
 					els->target->connections++;
 				}
@@ -87,7 +88,7 @@ void List::create(int NN, double EE, double ME, bool directed){
 	while (counter <= edges){
 		for (int i = 0; i < nodes; i++) visited[i] = 0;
 		begin = rand() % nodes;
-		temp = vnodes[begin];
+		temp = vNodes[begin];
 
         if (temp->connections == (nodes - 1)) {
             continue;
@@ -104,9 +105,9 @@ void List::create(int NN, double EE, double ME, bool directed){
 		}
 
 		newEdge = new Edge();
-		newEdge->weight = (rand() % 15) + 1;
+		newEdge->weight = (rand() % 50) + 1;
 		newEdge->source = temp;
-		newEdge->target = vnodes[end];
+		newEdge->target = vNodes[end];
 
 		if (temp->head == nullptr){
 			temp->head = newEdge;
@@ -136,11 +137,13 @@ void List::create(int NN, double EE, double ME, bool directed){
 		temp->connections++;
 		counter++;
 	}
+
     if (!testing) {
         display();
     }
+
 	delete[] visited;
-	delete[] vnodes;
+	delete[] vNodes;
 }
 
 //Funkcja wyswietlajaca graf
@@ -165,7 +168,7 @@ void List::display(){
 }
 
 //Funkcja towrzaca drzewo rozpinajace dla nieskierowanego
-void List::spanningtree(){
+void List::spanningTree(){
 
 	tail = head;
 	Node *create = head;
@@ -177,6 +180,7 @@ void List::spanningtree(){
 	do{
 		count = 0;
 		children = (rand() % 2) + 2;
+
 		do{
 			child = new Edge();
 			child->source = create;
@@ -187,7 +191,7 @@ void List::spanningtree(){
 			tail->next = newNode;
 			newNode->prev = tail;
 			tail = newNode;
-			child->weight = (rand() % 15) + 1;
+			child->weight = (rand() % 50) + 1;
 
 			if (create->head == nullptr){
 				create->head = child;
@@ -214,38 +218,43 @@ void List::spanningtree(){
 			}
 		}
 	} while (created != nodes);
+
 }
 
 //Funkcja obslugujaca algorytm Dijsktry
 void List::dijkstra(int start, int end) {
-    if(start>=0 && start<=nodes-1 && end>=0 && end<=nodes-1) {
-        dnch = nodes;
-        dch = 0;
-        notchecked = new Dijkstra[dnch];
 
-        for (int i = 0; i < dnch; i++) {
-            notchecked[i].index = i;
+    if((start>=0 && start<=nodes-1) && (end>=0 && end<=nodes-1)) {
+        int temp = start;
+        shortestPathUnchecked = nodes;
+        shortestPathChecked = 0;
+        notChecked = new shortestPath[shortestPathUnchecked];
+
+        for (int i = 0; i < shortestPathUnchecked; i++) {
+            notChecked[i].index = i;
         }
 
-        notchecked[start].distance = 0;
+        notChecked[start].distance = 0;
 
         do {
-            start = relax(start);
-            dnch--;
-            dch++;
-        } while (dnch != 0);
+            temp = relax(temp);
+            shortestPathUnchecked--;
+            shortestPathChecked++;
+        } while (shortestPathUnchecked != 0);
 
         if (!testing) {
-            displayShortestPath(checked, dch, start, end);
+            displayShortestPath(checked, shortestPathChecked, start, end);
         }
     } else {
         cout << "Wrong value of vertex";
+        return;
     }
 }
 
 //Funkcja relaksujaca sasiadow
 int List::relax(int index){
-	Dijkstra *temp;
+
+	shortestPath *temp;
 	Node *iter = head;
 	Edge *els;
 	int loop;
@@ -253,8 +262,8 @@ int List::relax(int index){
 	int result;
 	int mini;
 
-	for (int i = 0; i < dnch; i++){
-		if (index == notchecked[i].index){
+	for (int i = 0; i < shortestPathUnchecked; i++){
+		if (index == notChecked[i].index){
 			fall = i;
 			break;
 		}
@@ -267,11 +276,11 @@ int List::relax(int index){
 	els = iter->head;
 
 	while (els != nullptr){
-		for (int i = 0; i < dnch; i++){
-			if (notchecked[i].index == els->target->index){
-				if ((notchecked[fall].distance + els->weight) < notchecked[i].distance || notchecked[i].distance == -1){
-					notchecked[i].distance = notchecked[fall].distance + els->weight;
-					notchecked[i].prev = index;
+		for (int i = 0; i < shortestPathUnchecked; i++){
+			if (notChecked[i].index == els->target->index){
+				if ((notChecked[fall].distance + els->weight) < notChecked[i].distance || notChecked[i].distance == -1){
+                    notChecked[i].distance = notChecked[fall].distance + els->weight;
+                    notChecked[i].prev = index;
 				}
 				break;
 			}
@@ -279,44 +288,44 @@ int List::relax(int index){
 		els = els->next;
 	}
 
-	temp = new Dijkstra[dch + 1];
+	temp = new shortestPath[shortestPathChecked + 1];
 
-    if (dch == 0) {
-        temp[0] = notchecked[fall];
+    if (shortestPathChecked == 0) {
+        temp[0] = notChecked[fall];
     }else {
         loop = 0;
-        for (int i = 0; i < dch; i++) {
+        for (int i = 0; i < shortestPathChecked; i++) {
             temp[i] = checked[i];
             loop++;
         }
-        temp[loop] = notchecked[fall];
+        temp[loop] = notChecked[fall];
         delete[] checked;
     }
 
 	loop = 0;
 	checked = temp;
-	temp = new Dijkstra[dnch - 1];
+	temp = new shortestPath[shortestPathUnchecked - 1];
 
-	for (int i = 0; i < (dnch - 1); i++){
+	for (int i = 0; i < (shortestPathUnchecked - 1); i++){
 		if (i == fall){
 			loop++;
-			temp[i] = notchecked[loop];
+			temp[i] = notChecked[loop];
 		}else{
-			temp[i] = notchecked[loop];
+			temp[i] = notChecked[loop];
 		}
 		loop++;
 	}
 
-	delete[] notchecked;
-	notchecked = temp;
-	result = notchecked[0].index;
+	delete[] notChecked;
+    notChecked = temp;
+	result = notChecked[0].index;
 	mini = 10000000;
 
-	for (int i = 0; i < (dnch - 1); i++){
-		if (notchecked[i].distance != -1){
-			if (notchecked[i].distance < mini){
-				result = notchecked[i].index;
-				mini = notchecked[i].distance;
+	for (int i = 0; i < (shortestPathUnchecked - 1); i++){
+		if (notChecked[i].distance != -1){
+			if (notChecked[i].distance < mini){
+				result = notChecked[i].index;
+				mini = notChecked[i].distance;
 			}
 		}
 	}
@@ -326,70 +335,63 @@ int List::relax(int index){
 
 //Funckja obslugujaca algorytm prima
 void List::mstPrim(int start){
+
 	Prim *temp;
 	Node *iter;
-	Edge *els;
+	Edge *edge;
 	int min, loop, fall;
-	mst_size = 0;
+    mstSize = 0;
 	fall = start;
-	sol = 0;
-	nsol = nodes;
-	notSolved = new Prim[nsol];
+    mstSolved = 0;
+    mstUnsolved = nodes;
+	notSolved = new Prim[mstUnsolved];
 
-    for (int i = 0; i < nsol; i++) {
+    for (int i = 0; i < mstUnsolved; i++) {
         notSolved[i].index = i;
     }
 
-	while (sol != nodes){
+	while (mstSolved != nodes){
 		iter = head;
         for (int i = 0; i < fall; i++) {
             iter = iter->next;
         }
 
-		els = iter->head;
-		while (els != nullptr){
-			if (els->weight != 0){
-				for (int j = 0; j < nsol; j++){
-					if (notSolved[j].index == els->target->index){
-						if (notSolved[j].distance > els->weight || notSolved[j].distance == 0){
-							notSolved[j].distance = els->weight;
-							notSolved[j].prev = els->source->index;
+        edge = iter->head;
+		while (edge != nullptr){
+			if (edge->weight != 0){
+				for (int j = 0; j < mstUnsolved; j++){
+					if (notSolved[j].index == edge->target->index){
+						if (notSolved[j].distance > edge->weight || notSolved[j].distance == 0){
+							notSolved[j].distance = edge->weight;
+							notSolved[j].prev = edge->source->index;
 						}
 						break;
 					}
 				}
 			}
-			els = els->next;
+            edge = edge->next;
 		}
 
-		mst_size = mst_size + notSolved[start].distance;
-		sol++;
-		nsol--;
+        mstSize = mstSize + notSolved[start].distance;
+		mstSolved++;
+		mstUnsolved--;
 
-		//Zwiekszanie listy rozwiazanych
-
-		temp = new Prim[sol];
+		temp = new Prim[mstSolved];
 		loop = 0;
 
-        if (sol == 1) {
-            temp[0] = notSolved[start];
-        }else {
-            for (int i = 0; i < (sol - 1); i++) {
-                temp[i] = solved[i];
-                loop++;
-            }
-            temp[loop] = notSolved[start];
-            delete[] solved;
+        for (int i = 0; i < (mstSolved - 1); i++) {
+            temp[i] = solved[i];
+            loop++;
         }
+        temp[loop] = notSolved[start];
+        delete[] solved;
 
 		solved = temp;
 
-		//Zmiejszanie listy nie rozwiazanych
-
 		loop = 0;
-		temp = new Prim[nsol];
+		temp = new Prim[mstUnsolved];
 
-		for (int i = 0; i < nsol; i++){
+		for (int i = 0; i < mstUnsolved; i++){
 			if (i == start){
 				loop++;
 				temp[i] = notSolved[loop];
@@ -403,7 +405,7 @@ void List::mstPrim(int start){
 		notSolved = temp;
 		min = 100;
 
-		for (int i = 0; i < nsol; i++){
+		for (int i = 0; i < mstUnsolved; i++){
 			if (notSolved[i].distance < min && notSolved[i].distance != 0){
 				start = i;
 				fall = notSolved[i].index;
@@ -413,7 +415,7 @@ void List::mstPrim(int start){
 	}
 
     if (!testing) {
-        displayPrim(solved, sol);
+        displayPrim(solved, mstSolved);
     }
 }
 
@@ -425,7 +427,7 @@ void List::mstKruskal(){
 	bool found;
 	int *temp;
 	int index2, ind, tab, tab2;
-	mst_size = 0;
+    mstSize = 0;
 	cnt = 0;
 	t_size = nodes;
 	sizes = new int[t_size];
@@ -461,9 +463,6 @@ void List::mstKruskal(){
 
 	while (cnt != (nodes - 1)){
 		ind++;
-		index = line[ind].source;
-		index2 = line[ind].target;
-		found = false;
 		for (int i = 0; i < t_size; i++){
 			for (int j = 0; j < sizes[i]; j++){
                 if (tree[i][j] == line[ind].source) {
@@ -490,7 +489,7 @@ void List::mstKruskal(){
 	}
 
     for (int i = 0; i < (nodes - 1); i++) {
-        mst_size = mst_size + result[i].weight;
+        mstSize = mstSize + result[i].weight;
     }
 
     if (!testing) {
@@ -499,32 +498,30 @@ void List::mstKruskal(){
 
 	delete[] result;
 	delete[] line;
-	//for (int i = 0; i < t_size; i++) delete[] tree[i];
 	delete[] tree;
 }
 
 //Funkcja obslugujaca algorytm Forda-Bellmana
 void List::bellmanFord(int start, int end) {
 
-    if(start>=0 && start <= nodes-1) {
+    if((start>=0 && start <= nodes-1) && (end>=0 && end <= nodes-1)) {
+
         Node *temp = head;
         Edge *els;
-        dnch = nodes;
+        shortestPathUnchecked = nodes;
         int MAX_INT = 64000;
-        notchecked = new Dijkstra[dnch];
+        notChecked = new shortestPath[shortestPathUnchecked];
 
-        for (int i = 0; i < dnch; i++) {
-            notchecked[i].index = i;
-            notchecked[i].distance = MAX_INT;
+        for (int i = 0; i < shortestPathUnchecked; i++) {
+            notChecked[i].index = i;
+            notChecked[i].distance = MAX_INT;
         }
 
-        notchecked[start].distance = 0;
+        notChecked[start].distance = 0;
 
         for (int i = 0; i < start; i++) {
             temp = temp->next;
         }
-
-        els = temp->head;
 
         for (int i = 1; i < (nodes - 1); i++) {
             temp = head;
@@ -532,11 +529,11 @@ void List::bellmanFord(int start, int end) {
                 els = temp->head;
                 while (els != nullptr) {
                     if (els->target->index != start) {
-                        if ((notchecked[els->source->index].distance + els->weight) <
-                            notchecked[els->target->index].distance) {
-                            notchecked[els->target->index].distance =
-                                    notchecked[els->source->index].distance + els->weight;
-                            notchecked[els->target->index].prev =
+                        if ((notChecked[els->source->index].distance + els->weight) <
+                            notChecked[els->target->index].distance) {
+                            notChecked[els->target->index].distance =
+                                    notChecked[els->source->index].distance + els->weight;
+                            notChecked[els->target->index].prev =
                                     els->source->index;
                         }
                     }
@@ -547,12 +544,12 @@ void List::bellmanFord(int start, int end) {
         }
 
         if (!testing) {
-            displayShortestPath(notchecked, dnch, start, end);
+            displayShortestPath(notChecked, shortestPathUnchecked, start, end);
         }
 
-        delete[] notchecked;
+        delete[] notChecked;
     } else {
-        cout << "Zly wierzcholek poczatkowy!";
+        cout << "Wrong value of vertex";
     }
 
 }
@@ -562,11 +559,11 @@ int List::loadGraph(string filename, bool directed){
 	Edge *els, *iter, *newEdge, *revEdge;
 	int a, b, c;
 	string line;
-	ifstream plik(filename);
+	ifstream file(filename);
 
-	if (plik.good()){
+	if (file.good()){
 
-		plik >> a >> b;
+		file >> a >> b;
 		edges = a;
 		nodes = b;
 		prev = new Node();
@@ -586,7 +583,7 @@ int List::loadGraph(string filename, bool directed){
 
 		for (int i = 0; i < edges; i++){
 			temp = head;
-			plik >> a >> b >> c;
+			file >> a >> b >> c;
 
             for (int j = 0; j < a; j++) {
                 temp = temp->next;
@@ -647,11 +644,12 @@ int List::loadGraph(string filename, bool directed){
 				temp = temp->next;
 			}
 		}
-		plik.close();
+		file.close();
 	}
 	else {
         cout << "ERROR" << endl;
         return -1;
     }
-    return edges;
+
+    return nodes;
 }

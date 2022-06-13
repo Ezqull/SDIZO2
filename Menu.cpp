@@ -2,20 +2,20 @@
 #include <cmath>
 #include "List.h"
 #include "Menu.h"
-#include "Testing.h"
 
 using namespace std;
 
 void Menu::create_ui(Graphs *gg){
-    int nodes, edge;
-    double maxedge;
-    double mindensity;
+
+    int vertices, density;
+    double maxEdges = 0;
+    double minDensity;
     char input;
 
     cout << "Enter number of vertices: ";
-    cin >> nodes;
+    cin >> vertices;
 
-    if (nodes <= 1) {
+    if (vertices < 1) {
         cout << "\nNumber of vertices must be higher than 1" << endl;
         return;
     }
@@ -26,32 +26,35 @@ void Menu::create_ui(Graphs *gg){
     switch (input) {
         case 'd':{
             directed = true;
-            maxedge = nodes * (nodes - 1);
+            maxEdges = vertices * (vertices - 1);
             break;
         }
 
         case 'u':{
             directed = false;
-            maxedge = (nodes * (nodes - 1))/2;
+            maxEdges = (vertices * 1.0) * (vertices - 1) / 2;
             break;
         }
+
+        default:
+            break;
     }
 
-    mindensity = ceil((((double)nodes - 1) * 100) / maxedge);
+    minDensity = ceil((((vertices * 1.0) - 1) * 100) / maxEdges);
 
-    cout << "Enter desired density, > " << mindensity << "%" << endl;
-    cin >> edge;
+    cout << "Enter desired density, > " << minDensity << "%" << endl;
+    cin >> density;
 
-    if(edge < mindensity || edge > 100) {
+    if(density < minDensity || density > 100) {
         return;
     }
 
-    size_n = nodes;
+    size_n = vertices;
     exists = true;
-    gg->create(nodes, edge, maxedge, directed);
+    gg->create(vertices, density, maxEdges, directed);
 }
 
-void Menu::prim(Graphs *gg){
+void Menu::prim(Graphs *gg) const{
     int node;
     if (directed) {
         cout << "\nGraph can't be directed" << endl;
@@ -75,7 +78,7 @@ void Menu::prim(Graphs *gg){
     }
 }
 
-void Menu::kruskal(Graphs *gg){
+void Menu::kruskal(Graphs *gg) const{
     if (directed) {
         cout << "\nGraph can't be directed" << endl;
     }else {
@@ -87,7 +90,7 @@ void Menu::kruskal(Graphs *gg){
     }
 }
 
-void Menu::dijkstra(Graphs *gg){
+void Menu::dijkstra(Graphs *gg) const{
     int start;
     int end;
     if (!directed) {
@@ -115,7 +118,7 @@ void Menu::dijkstra(Graphs *gg){
     }
 }
 
-void Menu::bellmanFord(Graphs *gg){
+void Menu::bellmanFord(Graphs *gg) const{
     int start;
     int end;
     if (!directed) {
@@ -144,8 +147,8 @@ void Menu::bellmanFord(Graphs *gg){
 }
 
 void Menu::autoTest() {
-    matrix.switch_test();
-    list.switch_test();
+    matrix.switchTests();
+    list.switchTests();
     int ii;
     cout << "[MAX 2000] Graph size: ";
     cin >> ii;
@@ -154,8 +157,8 @@ void Menu::autoTest() {
     } else {
         testing.loopTests(matrix, list, ii);
     }
-    matrix.switch_test();
-    list.switch_test();
+    matrix.switchTests();
+    list.switchTests();
 }
 
 void Menu::loadMenuList() {
@@ -180,7 +183,7 @@ void Menu::loadMenuList() {
         }
 
         default:
-            break;
+            return;
     }
     size_n = list.loadGraph(filename, directed);
     exists = true;
@@ -208,7 +211,7 @@ void Menu::loadMenuMatrix() {
         }
 
         default:
-            break;
+            return;
     }
 
     size_n = matrix.loadGraph(filename, directed);
@@ -216,7 +219,8 @@ void Menu::loadMenuMatrix() {
 }
 
 void Menu::listMenu(){
-    while(1){
+
+    while(true){
         cout << secondMenu;
         char input1;
         cin >> input1;
@@ -270,7 +274,8 @@ void Menu::listMenu(){
 }
 
 void Menu::matrixMenu(){
-    while (1){
+
+    while (true){
         cout << secondMenu;
         char input1;
         cin >> input1;
@@ -350,6 +355,9 @@ void Menu::menu() {
             case 'q':{
                 return;
             }
+
+            default:
+                break;
         }
     }
 }
